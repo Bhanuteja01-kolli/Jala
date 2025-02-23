@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #ccc;
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        hr {
+            border: 1px solid #000;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        a::before {
+            content: "🔗";
+            margin-right: 5px;
+        }
+
+        div {
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#section1">Go to Section 1</a> | 
+        <a href="#section2">Go to Section 2</a> | 
+        <a href="#section3">Go to Section 3</a>
+    </nav>
+
+    <h1>Welcome to My Basics HTML Page</h1>
+    
+    <div id="section1" class="content-section">
+        <h2>Section 1: Introduction</h2>
+        <p>This is a <b>basic HTML</b> page that demonstrates several HTML tags.</p>
+        <p><i>This paragraph is italicized.</i></p>
+        <p><span class="highlight">This span is highlighted in yellow.</span></p>
+        <blockquote>
+            "HTML is the structure of the web." - Web Developer
+        </blockquote>
+    </div>
+
+    <div id="section2" class="content-section">
+        <h2>Section 2: Unordered List</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <div id="section3" class="content-section">
+        <h2>Section 3: Image & Anchor</h2>
+        <p>Click on the link below to visit a website:</p>
+        <a href="https://www.example.com" target="_blank">Visit Example</a>
+
+        <h3>Image of a Beautiful Landscape</h3>
+        <img src="https://via.placeholder.com/500" alt="Landscape">
+
+        <hr>
+        <p>This is a horizontal rule above.</p>
+    </div>
+
+</body>
+</html>

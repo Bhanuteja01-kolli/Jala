@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Program with Single Line and Multiline Comments -->
+    <h2>Program with Single Line and Multiline Comments</h2>
+    <script>
+        // This is a single-line comment
+
+        /* 
+        This is a 
+        multi-line comment
+        */
+    </script>
+
+    <!-- 2. Array of Fruits Sorted in Descending Order -->
+    <h2>Sort Fruits in Descending Order</h2>
+    <button class="button" onclick="sortFruits()">Sort Fruits</button>
+    <p id="fruits"></p>
+    <script>
+        const fruits = ["Banana", "Apple", "Cherry", "Mango", "Pineapple"];
+
+        function sortFruits() {
+            fruits.sort().reverse(); // Sort the array and then reverse it for descending order
+            document.getElementById("fruits").innerHTML = fruits.join(", ");
+        }
+    </script>
+
+    <!-- 3. Program with FOR/IN Loop -->
+    <h2>FOR/IN Loop Example</h2>
+    <script>
+        const fruitsList = ["Banana", "Apple", "Cherry", "Mango"];
+
+        // Loop through the array using FOR/IN
+        for (let index in fruitsList) {
+            console.log("Fruit " + (parseInt(index) + 1) + ": " + fruitsList[index]);
+        }
+    </script>
+
+    <!-- 4. Object "Person" with Two Ways of Accessing Properties -->
+    <h2>Access Object Properties</h2>
+    <script>
+        const person = {
+            firstname: "John",
+            lastname: "Doe"
+        };
+
+        // Accessing properties using dot notation
+        console.log(person.firstname + " " + person.lastname);
+
+        // Accessing properties using bracket notation
+        console.log(person["firstname"] + " " + person["lastname"]);
+    </script>
+
+    <!-- 5. Variable Hoisting (Initialization First, then Declaration) -->
+    <h2>Variable Hoisting Example</h2>
+    <script>
+        console.log(a); // undefined due to hoisting
+
+        var a = 5; // Initialization happens here
+        console.log(a); // 5
+
+        var a; // Declaration is hoisted but not initialized
+    </script>
+
+    <!-- 6. Strict Mode to Catch Errors with Uninitialized Variables -->
+    <h2>Strict Mode Example</h2>
+    <script>
+        'use strict'; // Enabling strict mode
+
+        try {
+            // This will throw an error since "b" is used before declaration in strict mode
+            console.log(b);
+            var b = 10;
+        } catch (e) {
+            console.log("Error: " + e.message); // Error: Cannot access 'b' before initialization
+        }
+    </script>
+
+</body>
+</html>

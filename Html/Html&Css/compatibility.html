@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout and Media Queries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 1. Table with Fixed and None Layout */
+        .table-fixed {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .table-fixed th, .table-fixed td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .table-none {
+            width: 100%;
+            table-layout: auto;
+            border-collapse: collapse;
+        }
+
+        .table-none th, .table-none td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* 2. List with Custom List Style Types */
+        .custom-list {
+            list-style-type: square;
+            margin: 20px;
+            padding: 0;
+        }
+
+        .custom-list ol {
+            list-style-type: upper-roman;
+            margin-left: 40px;
+        }
+
+        .custom-list ul {
+            list-style-type: circle;
+            margin-left: 40px;
+        }
+
+        /* 3. Grid Layout with Different Types */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* 4. Hero Image */
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero-image h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 5. Viewport, Grid, Media Queries, Image, and Video */
+        /* Viewport settings */
+        @media only screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+            }
+
+            .hero-image h1 {
+                font-size: 2em;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 1 column on very small screens */
+            }
+
+            .hero-image h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Image and Video Responsiveness */
+        img, video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Table with Fixed and None Layout -->
+    <h2>Table with Fixed Layout</h2>
+    <table class="table-fixed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>22</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>Mark</td>
+                <td>30</td>
+                <td>Paris</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Table with Auto Layout</h2>
+    <table class="table-none">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane</td>
+                <td>22</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>Mark</td>
+                <td>30</td>
+                <td>Paris</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 2. List with Custom List Style Types -->
+    <h2>Custom List Style Types</h2>
+    <ul class="custom-list">
+        <li>Item 1</li>
+        <li>Item 2
+            <ol>
+                <li>Subitem A</li>
+                <li>Subitem B</li>
+            </ol>
+        </li>
+        <li>Item 3</li>
+    </ul>
+
+    <!-- 3. Grid Layout with Different Types -->
+    <h2>Grid Layout</h2>
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+    </div>
+
+    <!-- 4. Hero Image -->
+    <section class="hero-image">
+        <h1>Welcome to Our Website</h1>
+        <p>Explore our content and enjoy your stay!</p>
+    </section>
+
+    <!-- 5. Viewport, Media Queries, Image, and Video -->
+    <h2>Responsive Image</h2>
+    <img src="https://via.placeholder.com/1200x800" alt="Placeholder Image">
+
+    <h2>Responsive Video</h2>
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+</body>
+</html>

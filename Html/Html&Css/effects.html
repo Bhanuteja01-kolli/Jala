@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Effects and Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* 1. CSS Shadow Effects for Image Box */
+        .image-box {
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            background-color: #ddd;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .image-box:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 2. CSS Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animation-box {
+            width: 200px;
+            height: 200px;
+            background-color: #4CAF50;
+            margin: 20px;
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+        }
+
+        /* Pagination Style */
+        .pagination {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            color: #333;
+            background-color: #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* 3. Handling Positions */
+        .static-box {
+            width: 100px;
+            height: 100px;
+            background-color: #FF5733;
+            position: static;
+            margin-top: 20px;
+        }
+
+        .relative-box {
+            width: 100px;
+            height: 100px;
+            background-color: #FFC300;
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+
+        .absolute-box {
+            width: 100px;
+            height: 100px;
+            background-color: #DAF7A6;
+            position: absolute;
+            top: 50px;
+            left: 200px;
+        }
+
+        .fixed-box {
+            width: 100px;
+            height: 100px;
+            background-color: #C70039;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .sticky-box {
+            width: 100px;
+            height: 100px;
+            background-color: #900C3F;
+            position: sticky;
+            top: 10px;
+        }
+
+        /* 4. Handling Overflow using Scroll */
+        .scroll-box {
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+            overflow: scroll;
+            background-color: #f5f5f5;
+        }
+
+        .scroll-box div {
+            height: 400px;
+            background-color: #ddd;
+            margin: 10px 0;
+        }
+
+        /* 5. Adding Opacity to Image */
+        .opacity-image {
+            width: 300px;
+            height: 200px;
+            background-image: url('https://via.placeholder.com/300x200.png');
+            background-size: cover;
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+        }
+
+        .opacity-image:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Image Box with Shadow Effect -->
+    <div class="image-box">
+        <h3>Hover Over Me</h3>
+    </div>
+
+    <!-- 2. CSS Animations -->
+    <div class="animation-box">
+        <p>Animation Box</p>
+    </div>
+
+    <!-- 3. Pagination -->
+    <div class="pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+    </div>
+
+    <!-- 4. Handling Positions -->
+    <div class="static-box">Static Position</div>
+    <div class="relative-box">Relative Position</div>
+    <div class="absolute-box">Absolute Position</div>
+    <div class="fixed-box">Fixed Position</div>
+    <div class="sticky-box">Sticky Position</div>
+
+    <!-- 5. Handling Overflow with Scroll -->
+    <div class="scroll-box">
+        <div>Content 1</div>
+        <div>Content 2</div>
+        <div>Content 3</div>
+        <div>Content 4</div>
+        <div>Content 5</div>
+    </div>
+
+    <!-- Adding Opacity to Image -->
+    <div class="opacity-image"></div>
+
+</body>
+</html>

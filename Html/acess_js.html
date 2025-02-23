@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions and Concepts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #counterDisplay {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        #hideButton {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Using "this" to Make Button Disappear on Click -->
+    <h2>Make Button Disappear using "this"</h2>
+    <button id="hideButton" onclick="this.style.display='none';">Click to Hide Me</button>
+
+    <!-- 2. Function Invocation using call() and apply() -->
+    <h2>call() and apply() Example</h2>
+    <button onclick="greetUsingCall()">Greet using call()</button>
+    <button onclick="greetUsingApply()">Greet using apply()</button>
+
+    <script>
+        // 2. Function Invocation using call() and apply()
+        function greet(message) {
+            console.log(message + ', ' + this.name);
+        }
+
+        function greetUsingCall() {
+            const person = { name: "Alice" };
+            greet.call(person, "Hello"); // Using call() with the person object
+        }
+
+        function greetUsingApply() {
+            const person = { name: "Bob" };
+            greet.apply(person, ["Hello"]); // Using apply() with the person object
+        }
+    </script>
+
+    <!-- 3. Counter Program (Click Count to Increment) -->
+    <h2>Counter Program</h2>
+    <button id="countButton" onclick="incrementCount()">Count</button>
+    <div id="counterDisplay">Count: 0</div>
+
+    <script>
+        // 3. Counter Program
+        let count = 0;
+
+        function incrementCount() {
+            count++;
+            document.getElementById("counterDisplay").innerHTML = "Count: " + count;
+        }
+    </script>
+
+    <!-- 4. Counter with Getter and Setter Accessors -->
+    <h2>Counter with Getter and Setter Accessors</h2>
+    <button onclick="counter.increment()">Increment with Getter/Setter</button>
+    <div id="counterWithAccessors">Counter: 0</div>
+
+    <script>
+        // 4. Counter with Getter and Setter Accessors
+        const counter = {
+            _count: 0,
+            get count() {
+                return this._count;
+            },
+            set count(value) {
+                this._count = value;
+                document.getElementById("counterWithAccessors").innerHTML = "Counter: " + this._count;
+            },
+            increment() {
+                this.count = this.count + 1; // Using the setter to increment
+            }
+        };
+    </script>
+
+    <!-- 5. Adding Properties Using Object Prototypes -->
+    <h2>Object Prototype Example</h2>
+    <button onclick="addPropertyToObject()">Add Property to Object</button>
+    <p id="prototypeExample"></p>
+
+    <script>
+        // 5. Adding Properties Using Object Prototypes
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.sayHello = function() {
+            console.log("Hello, my name is " + this.name);
+        };
+
+        // Add a new property to the prototype
+        Person.prototype.age = 25;
+
+        function addPropertyToObject() {
+            const person1 = new Person("Charlie");
+            person1.sayHello();
+            document.getElementById("prototypeExample").innerHTML = person1.name + " is " + person1.age + " years old.";
+        }
+    </script>
+
+</body>
+</html>
